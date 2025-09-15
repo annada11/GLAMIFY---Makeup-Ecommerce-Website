@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Glamify - Makeup Store</title>
+    <style>
+        /* Body Background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #fff0f6, #ffe3ec, #ffeaf5);
+            background-size: 300% 300%;
+            animation: gradientFlow 12s ease infinite;
+            color: #333;
+        }
+
+        @keyframes gradientFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(45deg, #ff6bcb, #d63384);
+            color: white;
+            padding: 40px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+            box-shadow: 0 8px 20px rgba(214, 51, 132, 0.3);
+            animation: fadeDown 1.5s ease;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            margin: 30px 0;
+            animation: fadeIn 2s ease;
+        }
+
+        nav a {
+            margin: 0 20px;
+            text-decoration: none;
+            color: #d63384;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            display: block;
+            height: 3px;
+            width: 0;
+            background: #ff6bcb;
+            transition: width 0.3s;
+            margin: auto;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        nav a:hover {
+            color: #ff2e93;
+        }
+
+        /* Welcome Text */
+        .welcome-text {
+            margin-top: 40px;
+            font-size: 1.3em;
+            color: #555;
+            animation: fadeInUp 2s ease;
+        }
+
+        /* Button */
+        .shop-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background: linear-gradient(45deg, #ff6bcb, #d63384);
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            border-radius: 40px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(214, 51, 132, 0.3);
+            animation: bounceIn 2.5s ease;
+        }
+
+        .shop-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: linear-gradient(45deg, #d63384, #ff6bcb);
+        }
+
+        /* Animations */
+        @keyframes fadeDown {
+            from { transform: translateY(-60px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(40px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive */
+        @media(max-width:768px){
+            header h1 { font-size: 2em; }
+            nav a { margin: 0 10px; font-size: 1em; }
+            .shop-btn { font-size: 1em; padding: 12px 25px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>💄 Welcome to Glamify</h1>
+        <p>Your One-Stop Makeup Destination</p>
+    </header>
+
+    <nav>
+        <a href="index.jsp">Home</a>
+        <a href="products.jsp">Makeup</a>
+        <a href="cart.jsp">Cart</a>
+        <a href="myOrders.jsp">My Orders</a>
+        <a href="logout.jsp">Logout</a>
+    </nav>
+
+    <p class="welcome-text">Discover the latest trends in lipsticks, foundations, eyeshadows, and more.  
+       Elevate your beauty game with our exclusive collections!</p>
+
+    <a href="products.jsp" class="shop-btn">✨ Shop Now</a>
+</body>
+</html>
